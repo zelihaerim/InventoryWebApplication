@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.arg">
+<head>
+	<meta charset="UTF-8">
+	<title>List Categories</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.0.0/css/bootstrap.min.css}"/>
+</head>
+<body>
+	<div class = "container" align="center">
+		<div><h1> Category List</h1></div>
+		<p class="create-product-link-header"> <a href="/">Click to Return Menu</a> </p>
+		<div>		
+			<table border="1" >
+			<thead>
+				<tr>
+					<th align="center">ID</th>
+					<th>Name</th>
+				</tr>
+			</thead>
+			<tbody>
+				<th:block th:each="category : ${listCategories}">
+				<tr>
+					<td th:text="${category.id}" >ID</td>
+					<td th:text="${category.name}" >Name</td>
+				</tr>
+				</th:block>
+			</tbody>
+			</table>			
+		</div>
+	</div>
+	
+	
+</body>
+</html>
+
+
+<style>
+html,
+body {
+	height: 100%;
+}
+h1,deneme{
+	color: orange;
+}
+body {
+	margin: 0;
+	background: linear-gradient(45deg, #FFF8DC, #FFF8DC);
+	font-family: sans-serif;
+	font-weight: 100;
+}
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+table {
+
+	width: 300px;
+	border: 1px red;
+	border-style: dashed;
+}
+
+th,
+td {
+	
+	padding: 5px;
+	background-color: rgba(255,255,255,0.5);
+	color: #FF1493;
+	text-align: center;
+	border: 1px red;
+	border-style: dashed;
+}
+
+th {
+	text-align: center;
+}
+thead.th {
+		background-color: #116080;
+	}
+	
+	td.position:relative,
+	td:hover:before{
+		content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: rgba(255,255,255,0.2);
+				z-index: -1;
+	}
+.create-product-link-header{
+	color: orange;
+	font-size: 20px;
+}
+
+
+</style>
+
+
+
+

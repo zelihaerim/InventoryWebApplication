@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.arg">
+<head>
+	<meta charset="UTF-8">
+	<title>Create New Brand</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.0.0/css/bootstrap.min.css}"/>
+</head>
+<body>
+	<div class = "container" align="center">
+		<div th:if ="${brand.id==null}"><h1> Create New Brand</h1></div>
+		<div th:unless ="${brand.id==null}"><h1> Edit Brand</h1></div>
+		<div>		
+			<form th:action="@{/brands/save}" th:object="${brand}"
+            method="post">
+			<input type="hidden" th:field="*{id}" th:value="${brand.id}" />
+            <table border="0" cellpadding="10">
+                <tr>
+                    <td>Brand Name:</td>
+                    <td><input type="text" th:field="*{name}" required/></td>
+                </tr>
+
+                <!--  Categories as input -->
+                            
+                 	<td>Choose one or more categories: </td>
+                 	<td>
+                 	<div class="box">
+                 		<select th:field="*{categories}" multiple="multiple" required>
+                 			<th:block th:each="cat : ${listCategories}">
+                 				<option class="option-css" th:text="${cat.name}" th:value="${cat.id}" />	
+                 	        </th:block>		
+                 		</select>    
+                 	</div>
+                 	</td>                 	                 	                          
+                <tr>
+                    <td colspan="2"><button class="btn" type="submit">Save</button> </td>
+                </tr>
+            </table>
+        </form>			
+		</div>
+	</div>
+	
+	
+</body>
+</html>
+
+
+<style>
+html,
+body {
+	height: 100%;
+}
+h1,deneme{
+	color: white;
+}
+body {
+	margin: 0;
+	background: linear-gradient(45deg, #ff1493, #00FFFF);
+	font-family: sans-serif;
+	font-weight: 100;
+}
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.btn{
+	background-color: #ff8c00; 
+	color: white;
+	border-color: ff1493;
+	font-size: 20px;
+
+}	
+.btn:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: #fff;
+}
+
+
+
+
+.box select {
+  background-color: #ff1493;
+  color: white;
+  padding: 7px;
+  border: none;
+  font-size: 18px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+}
+
+
+.box:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box select option {
+  padding: 7px;
+}
+
+</style>

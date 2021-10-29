@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.arg">
+<head>
+	<meta charset="UTF-8">
+	<title>List Brands</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.0.0/css/bootstrap.min.css}"/>
+</head>
+<body>
+	<div class = "container" align="center">
+		<div><h1> Brand List</h1></div>
+		<p class="create-product-link-header"> <a href="/">Click to Return Menu</a> </p>
+		<div>		
+			<table border="1" >
+			<thead>
+				<tr>
+					<th align="center">ID</th>
+					<th align="center">Name</th>
+					<th align="center">Categories</th>
+					<th align="center">Edit</th>
+					<th align="center">Delete</th>
+				</tr>
+			</thead>
+			<tbody>
+				<th:block th:each="brand : ${listBrands}">
+				<tr>
+					<td th:text="${brand.id}">ID</td>
+					<td th:text="${brand.name}">Name</td>				
+					<td th:text="${brand.categories}">Categories</td>
+					<td>
+						<a th:href="@{'/brands/edit/'+${brand.id}}">Edit</a>
+					</td>
+					<td>
+						<a th:href="@{'/brands/delete/'+${brand.id}}">Delete</a>
+					</td>
+				
+				</tr>
+				</th:block>
+			</tbody>
+			</table>			
+		</div>
+	</div>
+	
+	
+</body>
+</html>
+
+
+<style>
+html,
+body {
+	height: 100%;
+}
+h1,deneme{
+	color: #556B2F;
+}
+body {
+	margin: 0;
+	background: linear-gradient(45deg, #90EE90, #90EE90);
+	font-family: sans-serif;
+	font-weight: 100;
+}
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+table {
+
+	width: 300px;
+	border: 1px red;
+	border-style: dashed;
+}
+
+th,
+td {
+	
+	padding: 5px;
+	background-color: rgba(255,255,255,0.5);
+	color: #556B2F;
+	text-align: center;
+	border: 1px red;
+	border-style: dashed;
+}
+
+th {
+	text-align: center;
+}
+thead.th {
+		background-color: #116080;
+	}
+	
+	td.position:relative,
+	td:hover:before{
+		content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: rgba(255,255,255,0.2);
+				z-index: -1;
+	}
+.create-product-link-header{
+	color: orange;
+	font-size: 20px;
+}
+
+
+</style>
+
+
+
+

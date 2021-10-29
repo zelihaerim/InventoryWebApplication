@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.arg">
+<head>
+	<meta charset="UTF-8">
+	<title>Inventory Homepage</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.0.0/css/bootstrap.min.css}"/>
+</head>
+<body>
+	<div class = "container text-center">
+		<div><h1> Welcome to Inventory App</h1></div>
+		<div class="p-2">
+			<a class="h2" th:href="@{/categories}">List Categories</a>			
+		</div>
+		<div class="p-2">
+			<a class="h2" th:href="@{/categories/new}">Create Categories</a>			
+		</div>
+		<div class="p-2">
+			<a class="h2" th:href="@{/products}">List Products</a>			
+		</div>
+		<div class="p-2">
+			<a class="h2" th:href="@{/products/new}">Create Product</a>			
+		</div>
+		
+		<div class="p-2">
+			<a class="h2" th:href="@{/brands}">List Brands</a>			
+		</div>
+		<div class="p-2">
+			<a class="h2" th:href="@{/brands/new}">Create Brand</a>			
+		</div>
+		
+	</div>
+</body>
+</html>
+
+<style>
+html,body{
+	height: 100%;
+	margin: 0;
+	background: linear-gradient(45deg, #E6E6FA, #FFB6C1);
+	font-family: sans-serif;
+	font-weight: 100;
+	padding-top: 60px;
+	
+}
+h1{
+	border: 3px red;
+	border-style: dashed;
+	padding-bottom: 20px;
+	color: #1E90FF;
+}
+</style>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.arg">
+<head>
+	<meta charset="UTF-8">
+	<title>Product Categories</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.0.0/css/bootstrap.min.css}"/>
+</head>
+<body>
+	<div class = "container" align="center">
+		<div><h1> Product List</h1></div>
+		<p class="create-product-link-header"> <a href="/">Click to Return Menu</a> </p>
+		<div>		
+			<table border="1" >
+			<thead>
+				<tr>
+					<th align="center">ID</th>
+					<th align="center">Name</th>
+					<th align="center">Price</th>
+					<th align="center">Category</th>
+					<th align="center">Details</th>
+					<th align="center">Edit</th>
+					<th align="center">Delete</th>
+				</tr>
+			</thead>
+			<tbody>
+				<th:block th:each="product : ${listProducts}">
+				<tr>
+					<td th:text="${product.id}">ID</td>
+					<!-- <td> [[${product.id}]] </td> -->
+					<td th:text="${product.name}">Name</td>
+					<td th:text="${product.price}">Price</td>
+					<td th:text="${product.category.name}">Price</td>
+					<td th:text="${product.details}">Details</td>					
+					<td>
+						<a th:href="@{'/products/edit/'+${product.id}}">Edit</a>
+					</td>
+					<td>
+						<a th:href="@{'/products/delete/'+${product.id}}">Delete</a>
+					</td>
+				</tr>
+				</th:block>
+			</tbody>
+			</table>			
+		</div>
+	</div>
+	
+	
+</body>
+</html>
+
+
+<style>
+html,
+body {
+	height: 100%;
+}
+h1,deneme{
+	color: #008B8B;
+}
+body {
+	margin: 0;
+	background: linear-gradient(45deg, #E0FFFF, #E0FFFF);
+	font-family: sans-serif;
+	font-weight: 100;
+}
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+table {
+
+	width: 300px;
+	border: 1px rgb(255, 0, 255);
+	border-style: dashed;
+}
+
+th,
+td {
+	
+	padding: 5px;
+	background-color: rgba(255,255,255,0.5);
+	color: #00008B;
+	text-align: center;
+	border: 1px red;
+	border-style: dashed;
+}
+
+th {
+	text-align: center;
+}
+thead.th {
+		background-color: #116080;
+	}
+	
+	td.position:relative,
+	td:hover:before{
+		content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: rgba(255,255,255,0.2);
+				z-index: -1;
+	}
+.create-product-link-header{
+	color: orange;
+	font-size: 20px;
+}
+
+
+</style>
+
+
+
+
