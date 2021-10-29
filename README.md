@@ -1,5 +1,6 @@
 # InventoryWebApplication
 Java Spring Boot, MySQL, Data Jpa, thymeleaf, Bootstrap, css html etc. <br>
+<br> One to many relation in db. <br>
 ![homepage](https://user-images.githubusercontent.com/23221280/139465639-4e344952-bde3-4837-a423-59bb16bcea16.PNG)
 <br>
 ![list categories](https://user-images.githubusercontent.com/23221280/139465770-619a702c-e83f-4843-9906-67eaac2907d8.PNG)
