@@ -17,3 +17,5 @@ Java Spring Boot, MySQL, Data Jpa, thymeleaf, Bootstrap, css html etc. <br>
 <br>
 ![create brand](https://user-images.githubusercontent.com/23221280/139466018-740e8be7-130b-440b-90c5-e34a5c8c258e.PNG)
 <br>
+![InventoryApp drawio](https://user-images.githubusercontent.com/23221280/139472643-e7c83505-7713-45bb-b63b-b731efaa8c81.png)
+<br>
